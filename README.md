@@ -5,6 +5,9 @@
     1. import
     1. plugins
     1. logs
-    
+
 1. docker-compose up
+
+![alt text](relationships.png)
+![alt text](node.png)
  
