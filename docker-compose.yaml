@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+     - ./volumes/data:/data
+     - ./volumes/logs:/logs
+     - ./volumes/import:/var/lib/neo4j/import
+     - ./load.sh:/var/lib/neo4j/load.sh
+    # entrypoint: /var/lib/neo4j/load.sh
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*,algo.*
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4JLABS_PLUGINS=["apoc", "graph-data-science"]
+      - NEO4J_dbms_connector_bolt_listen__address=:7687
+      - NEO4J_dbms_connector_bolt_advertised__address=:7687
+      - NEO4J_dbms_default__listen__address=0.0.0.0
+      - NEO4J_dbms_connector_http_listen__address=:7474
+
+
+# version: "3.3"
+# services:
+#   neo4j:
+#     image: neo4j:latest
+#     user: ${MY_UID}:${MY_GID}
+#     ports:
+#       - 7474:7474
+#       - 7687:7687
+#     volumes:
+#       - ./volumes/data:/data
+#       - ./volumes/logs:/logs
+#       - ./volumes/plugins:/plugins
+#       - ./volumes/import:/var/lib/neo4j/import
+#       - ./load.sh:/var/lib/neo4j/load.sh
+#     # entrypoint: /var/lib/neo4j/load.sh
+#     environment:
+#       - NEO4J_AUTH=neo4j/test1234
+#       - NEO4J_dbms_security_procedures_unrestricted=apoc.*,algo.*
+#       - NEO4J_apoc_import_file_enabled=true
+#       - NEO4JLABS_PLUGINS=["apoc", "graph-data-science"]
+#       - NEO4J_dbms_connector_bolt_listen__address=:7687
+#       - NEO4J_dbms_connector_bolt_advertised__address=:7687
+#       - NEO4J_dbms_default__listen__address=0.0.0.0
+#       - NEO4J_dbms_connector_http_listen__address=:7474

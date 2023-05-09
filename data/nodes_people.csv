@@ -1,0 +1,5 @@
+name:ID,location,gender,reader_type,:LABEL
+Person 1,Noida,Male,Advanced,PEOPLE
+Person 2,Bangalore,Female,Beginner,PEOPLE
+Person 3,New Delhi,Female,Beginner,PEOPLE
+Person 4,Mumbai,Female,Intermediate,PEOPLE

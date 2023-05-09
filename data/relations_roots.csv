@@ -1,0 +1,9 @@
+:START_ID,:END_ID,:TYPE
+People,Person 1,CHILDREN
+People,Person 2,CHILDREN
+People,Person 3,CHILDREN
+People,Person 4,CHILDREN
+Books,Book 1,CHILDREN
+Books,Book 2,CHILDREN
+Books,Book 3,CHILDREN
+Books,Book 4,CHILDREN

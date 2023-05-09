@@ -1,0 +1,4 @@
+:START_ID,:END_ID,number_of_times,rating:int,:TYPE
+Person 1,Book 2,2,4,READ
+Person 1,Book 3,1,5,READ
+Person 4,Book 4,3,4,READ
